@@ -1,4 +1,4 @@
-package com.hospiol.Testcases;
+package com.Equarz.Testcases;
 
 
 import com.base.Testbase;
