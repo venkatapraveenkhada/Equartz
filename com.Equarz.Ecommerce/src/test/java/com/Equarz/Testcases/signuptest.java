@@ -20,7 +20,8 @@ public class signuptest extends testbase1 {
 	public void initialize()
 	{
 		Setup();
-		sf=new signup_functionality(driver);
+		
+		sf = new signup_functionality(driver);
 		
 		
 	}
