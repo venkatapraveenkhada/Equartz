@@ -1,11 +1,16 @@
 package com.Pageobjects;
 
+import static org.testng.Assert.assertEquals;
+
+import org.apache.poi.xdgf.util.Util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.Utils.Utils;
 import com.base.Testbase;
 
 public class buynow  extends Testbase
@@ -63,9 +68,14 @@ public class buynow  extends Testbase
 		String print = orderplaced.getText();
 		assertEquals("Your order has been placed successfully! !", print);
 	}
-	public void buynowcart() throws Throwable 
-	{
+	
+
+
+	public void buynowcart() throws Throwable {
+	
 		Actions act = new Actions(driver);
+		
+			
 		act.moveToElement(cart).build().perform();
 		cartcheck.click();
 		uf.dropdown(shipping, "2");
@@ -76,8 +86,7 @@ public class buynow  extends Testbase
 		address.click();
 		proceed.click();
 		cod.click();
+		
 	}
-
-}
-
+	}
 

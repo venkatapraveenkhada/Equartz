@@ -1,4 +1,5 @@
 package com.Equarz.Testcases;
+
 import org.testng.annotations.Test;
 import com.Pageobjects.Login_Functionality;
 import com.Pageobjects.buynow;
