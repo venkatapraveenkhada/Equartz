@@ -33,9 +33,7 @@ public class homelinkstest extends Testbase
       @BeforeMethod
       public void initialize() throws Throwable
       {
-//    	  setup();
-//    	  lg=new Login_functionality(driver);
-//    	  lg.validatelogin(props.getProperty("username"),props.getProperty("password"));
+
     	  hl=new homelinks(driver);
       }
       @Test

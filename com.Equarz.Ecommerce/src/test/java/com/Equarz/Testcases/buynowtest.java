@@ -22,7 +22,7 @@ public class buynowtest extends testbase1{
 		
 		Setup();
 		lg=new Login_Functionality(driver);
-		lg.logindata(props.getProperty("username"),props.getProperty("password"));
+		lg.logindata (props.getProperty("username"),props.getProperty("password"));
 	    bn = new buynow(driver);
 	     
 	}
