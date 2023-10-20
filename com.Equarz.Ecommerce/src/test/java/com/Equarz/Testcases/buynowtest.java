@@ -8,7 +8,7 @@ import com.base.testbase1;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 
-public class buynowtest extends testbase1{
+public class buynowtest extends testbase1 {
 	
 	buynow bn;
 	Login_Functionality lg;
@@ -22,7 +22,7 @@ public class buynowtest extends testbase1{
 		
 		Setup();
 		lg=new Login_Functionality(driver);
-		lg.logindata (props.getProperty("username"),props.getProperty("password"));
+		lg.logindata ();
 	    bn = new buynow(driver);
 	     
 	}

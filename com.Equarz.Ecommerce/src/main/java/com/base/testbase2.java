@@ -23,7 +23,7 @@ package com.base;
 			props = new Properties();
 
 			try {
-				file = new FileInputStream("C:\\Users\\Dell\\git\\Eccomerce_Project\\com.Equarz.Ecommerce\\src\\main\\java\\com\\PropertiesConfig\\Propfile");
+				file = new FileInputStream("C:\\Users\\Dell\\git\\Eccomerce_Project\\com.Equarz.Ecommerce\\src\\main\\java\\com\\PropertiesConfig\\propfile1");
 			} catch (FileNotFoundException e) {
 				
 				e.printStackTrace();

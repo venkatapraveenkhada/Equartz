@@ -27,7 +27,7 @@ public class homelinkstest extends Testbase
     	  
     	  Setup();
     	  lg=new Login_Functionality(driver);
-    	  lg.logindata(props.getProperty("username"),props.getProperty("password"));
+    	  lg.logindata();
     	  
       }
       @BeforeMethod
@@ -117,4 +117,4 @@ public class homelinkstest extends Testbase
 }
 
 
-}
+
