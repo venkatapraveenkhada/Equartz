@@ -22,7 +22,7 @@ public class searchtest extends testbase1{
 	{
 		Setup();
 		lg=new Login_Functionality(driver);
-		lg.logindata(props.getProperty("username"),props.getProperty("password"));
+		lg.logindata();
 		sp=new searchproduct(driver);
 	}
 	@Test

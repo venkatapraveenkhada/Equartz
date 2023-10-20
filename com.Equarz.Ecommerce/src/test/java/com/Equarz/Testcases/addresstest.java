@@ -9,36 +9,68 @@ import com.Pageobjects.addresspage;
 import com.base.Testbase;
 
 
+import java.io.IOException;
 
-public class addresstest extends Testbase{
-	
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+
+
+import com.Pageobjects.Login_Functionality;
+
+import com.Utils.Utils;
+import com.base.Testbase;
+
+public class addresstest extends Testbase {
+	int testid;
 	addresspage ap;
 	Login_Functionality lg;
+	private final String sheetname="address";
 	
-	public addresstest() {
+	
+	public addresstest()
+	{
 		super();
 	}
 	@BeforeClass
-	public void login() throws Throwable 
+	public void login() throws Exception
 	{
 		Setup();
-  	  lg=new Login_Functionality(driver);
-  	  lg.logindata(props.getProperty("username"),props.getProperty("password"));
-  	  ap=new addresspage(driver);
+		lg=new Login_Functionality(driver);
+		lg.logindata();
+		
 	}
-	@Test(dataProvider = "setdata", dataProviderClass = Utilsfile.class , description = "New address added successfuly")
-	public void AddressNew(String conname,String mobile,String cityy,String zzipcode,String Addresses) 
+	@DataProvider
+	public String[][] addressData() throws IOException
 	{
-		ap.newaddress(conname,mobile,cityy,zzipcode,Addresses);
+		return Utils.readdata(sheetname);
 	}
-	@Test
-	public void Deleteaddress() 
+	
+	@BeforeMethod
+	public void initialize() 
+	{
+		ap=new addresspage (driver);		
+				
+	}
+	@Test(priority=1,dataProvider = "addressData",dataProviderClass =addresstest.class )
+	public void addaddress(String name,String phone,String city,String zipcode) throws InterruptedException 
+	{
+		testid=1;
+		ap.addaddress(name,phone,city,zipcode);
+		
+	}
+	@Test(priority=2)
+	public void editaddress()
+	{
+		ap.editaddress();
+	}
+	@Test(priority=3)
+	public void deleteaddress() throws Throwable
 	{
 		ap.deleteaddress();
 	}
-    @Test 
-    public void EditAddress()
-    {
-    	ap.editaddress();
-    }
+	
+
 }
